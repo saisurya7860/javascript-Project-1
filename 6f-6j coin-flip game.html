@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button 
+    onclick="
+    let ComputerMove = '';
+    let guess = 'Head';
+    let result='';
+    const randomNumber = Math.random();
+    // Variable declarations
+   
+    ComputerMove = randomNumber < 0.5 ? 'Head' : 'Tails' ;
+
+    result = ComputerMove === guess ? 'You Win' : 'You Lose';
+
+    /*
+    if(ComputerMove === guess){
+        result = 'You win';
+    }
+    else{
+        result = 'You lose'
+    } */
+    
+    alert(`Computer picked ${ComputerMove}  You guessed ${guess} ${result}`);
+    "
+    >Head</button>
+
+    <button     
+    onclick="
+    guess ='Tails'
+     randomNumber = Math.random();
+    ComputerMove = randomNumber < 0.5 ? 'Head' : 'Tails' ;
+
+    result = ComputerMove === guess ? 'You Win' : 'You Lose';
+
+    /*
+    if(ComputerMove === guess){
+        result = 'You win';
+    }
+    else{
+        result = 'You lose'
+    }
+    */
+
+    alert(`Computer picked ${ComputerMove}  You guessed ${guess} ${result}`);
+    "
+    >Tails</button>
+
+</body>
+
+<script>
+    
+</script>
+</html>

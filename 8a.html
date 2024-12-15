@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // const product = {
+    //     name : 'basketball',
+    //     price : 2095
+    // };
+    // console.log(product);
+
+    // product.price = 2595;
+
+    // console.log(product);
+
+    // product['delivery-time'] = '3days';
+
+    // console.log(product);
+
+    // function comparePrice(product1 , product2){
+    //     if (product1.price > product2.price){
+    //         return console.log(product2);
+    //     }
+    //     else if(product2.price > product1.price){
+    //         return console.log(product1);
+    //     }
+    // }
+
+
+    function isSameProduct(product1,product2){
+        if((product1.name === product2.name) && (product1.price === product2.price)){
+            return console.log(true)
+        }
+        else {
+            return console.log(false)
+        }
+    }
+
+
+    let product1 = {
+        name : 'basketball',
+        price : 700
+    };
+    let product2 = {
+        name : 'volleyball',
+        price : 800
+    };
+
+    // comparePrice(product1,product2);
+
+    isSameProduct(product1,product2);
+
+    let name = 'surya '.toUpperCase();
+    console.log(name.repeat(6));
+
+</script>
+</html>

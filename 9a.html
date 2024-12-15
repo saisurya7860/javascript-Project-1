@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>   
+    <input class="js-inputs" type="text" onkeyup="
+            submit();
+        ">
+
+    <button onclick="
+        submit();
+    ">Submit</button>
+  
+    <p class="result"></p>
+</body>
+
+<script>
+
+    function submit(){
+        const name = document.querySelector('.js-inputs');
+        const valname = name.value;
+        document.querySelector('.result').innerHTML = `Your Name is ${valname}`; 
+    }
+
+
+
+</script>
+</html>

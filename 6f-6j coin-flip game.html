@@ -8,52 +8,60 @@
 <body>
     <button 
     onclick="
-    let ComputerMove = '';
-    let guess = 'Head';
-    let result='';
-    const randomNumber = Math.random();
-    // Variable declarations
-   
-    ComputerMove = randomNumber < 0.5 ? 'Head' : 'Tails' ;
 
-    result = ComputerMove === guess ? 'You Win' : 'You Lose';
-
-    /*
-    if(ComputerMove === guess){
-        result = 'You win';
-    }
-    else{
-        result = 'You lose'
-    } */
-    
-    alert(`Computer picked ${ComputerMove}  You guessed ${guess} ${result}`);
+    ComputerMovecheck('Head');
+      
     "
     >Head</button>
 
     <button     
     onclick="
-    guess ='Tails'
-     randomNumber = Math.random();
-    ComputerMove = randomNumber < 0.5 ? 'Head' : 'Tails' ;
 
-    result = ComputerMove === guess ? 'You Win' : 'You Lose';
-
-    /*
-    if(ComputerMove === guess){
-        result = 'You win';
-    }
-    else{
-        result = 'You lose'
-    }
-    */
-
-    alert(`Computer picked ${ComputerMove}  You guessed ${guess} ${result}`);
+    ComputerMovecheck('Tails');
+     
     "
     >Tails</button>
+
+    <button onclick ="
+    score.wins = 0 ,
+    score.losses = 0,
+    localStorage.removeItem('score');
+    " >Reset Score</button>
 
 </body>
 
 <script>
-    
+
+    let score = JSON.parse(localStorage.getItem('score'))
+    || {
+        wins : 0,
+        losses : 0
+    };
+
+    let ComputerMove = '';
+    let result='';
+ 
+    function ComputerMovecheck(guess){
+
+        const randomNumber = Math.random();
+        ComputerMove = randomNumber < 0.5 ? 'Head' : 'Tails' ;
+   
+        result = ComputerMove === guess ? 'You Win' : 'You Lose';
+
+        if(result === 'You Win'){
+            score.wins = score.wins + 1;
+        }
+        else if(result === 'You Lose'){
+            score.losses = score.losses + 1; 
+        }
+
+        
+        localStorage.setItem('score',JSON.stringify(score));
+
+        alert(`Computer picked ${ComputerMove}  You guessed ${guess} ${result}
+        wins : ${score.wins} , losses : ${score.losses}`);
+
+    }
+
 </script>
 </html>

@@ -1,0 +1,38 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>To Do List</title>
+    </head>
+    <body>
+
+        <p>To do practice List 1</p>
+
+        <input type="text" placeholder="Todo name" class="js-input" onkeydown="enterkey();">
+
+        <button class="add-btn" onclick="addArr();" >Add</button>
+        
+        <script>
+            const myArr = [];
+
+            function addArr(){
+                const valEle = document.querySelector('.js-input');
+                const name = valEle.value;
+             
+                myArr.push(name);
+                console.log( myArr );
+
+                valEle.value = '';
+            }
+
+            function enterkey(){
+                if(event.key === 'Enter'){
+                    addArr();
+                }
+            }
+
+     
+        </script>
+    </body>
+    </html>

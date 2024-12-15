@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM PROJECTS</title>
+</head>
+<body>
+    
+    <p>Youtube subscribe button</p>
+
+    <button class="js-subscribe-btn" onclick ="myclick();"
+    > subscribe</button>
+
+    <p>Amazon Shipping Calculator</p>
+
+    <input class="js-input" placeholder="cost of order" onkeydown="handlekey();">
+
+    <button onclick="cartcalculate();">Calculate</button>
+
+    <p class="js-calci" ></p>
+
+
+
+
+    <script>
+
+        function handlekey(){
+            if(event.key === 'Enter'){
+            cartcalculate(); 
+            }
+        }
+
+        function cartcalculate(){
+            const inputelem = document.querySelector('.js-input');
+            let valueele    = Number(inputelem.value);
+            const totpara   = document.querySelector('.js-calci');
+            if(valueele <= 40){
+                valueele = valueele + 10;
+                totpara.innerHTML = valueele;
+            }            
+            else if(valueele > 40){
+                totpara.innerHTML = valueele;
+            }
+        }
+        
+        function myclick(){
+            const jsbtn = document.querySelector('.js-subscribe-btn');
+            if(jsbtn.innerHTML === 'subscribe'){
+                jsbtn.innerHTML = 'Subscribed';
+            }
+            else{
+                jsbtn.innerHTML = 'subscribe';
+            }
+
+        }
+
+        // const jsbtn = document.querySelector('.js-subscribe-btn').innerHTML;
+        //     console.log(jsbtn);
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+body{
+    background-color: #292727;
+}
+p{
+    color:#fff;
+}
+.container{
+    display: grid;
+    place-items: center;
+}
+.button-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    font-weight: bold;
+    font-size: 2rem;
+}
+.moves-icon{
+    width:60px;
+    height: 60px;
+}
+.move-btn{
+    background-color: transparent;
+    border: 2px solid rgb(255, 255, 255);
+    padding: 1.5rem;
+    border-radius: 50%;
+    margin: 10px;
+}
+.move-result{
+    font-size:1.5rem;
+    font-weight: bold;
+}
+.player-move{
+    font-size: 1.3rem;
+}
+.score-css{
+    font-size: 1.3rem;
+}
+.reset-btn{
+    padding: 1rem 2rem;
+    color: #000;
+    background-color: rgb(249, 190, 53);
+    border: none;
+    cursor:pointer;
+    transition: all ease-in-out 0.35s;
+}
+.reset-btn:hover{
+    box-shadow: 2px 2px 5px rgb(240, 239, 234);
+}
+.reset-btn:active{
+    transform: translateY(5px);
+}

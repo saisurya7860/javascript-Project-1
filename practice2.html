@@ -10,9 +10,31 @@
     
     
     <script>
-       function greet(){
+        let fahrenheit,celsius = '';
+
+        function convertTemperature(degrees,unit){
+            if(unit === 'C'){
+                convertToFahrenheit(degrees);
+            }
+            else if(unit === 'F'){
+                convertToCeslsius(degrees);
+            }
         
-       }
+        }
+
+        function convertToFahrenheit(celsius){
+            fahrenheit = (celsius * 9/5) + 32;
+            console.log(`celsius is ${celsius}  to fahrenheit is ${fahrenheit}`);
+        }
+
+        function convertToCeslsius(fahrenheit){
+            celsius = (fahrenheit -32) * 5/9;
+            console.log(`fahrenheit is ${celsius}  to celsius is ${fahrenheit}`);
+        }
+       
+       
+
+        convertTemperature(25,'C');
     </script>
 </body>
 </html>

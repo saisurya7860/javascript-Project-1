@@ -7,40 +7,70 @@
 </head>
 <body>
 
-    <button onclick="
-        pickToss('heads');">Heads</button>
+    <p>youtube Subscribe button</p>
 
-    <button onclick="
-         pickToss('tails');">Tails</button>
+    <button class="subscribe-btn" onclick="
+        youtubeBtn();
+    ">subscribe</button>
 
-    <button onclick="
-        score.wins = 0,
-        score.losses = 0;
-        localStorage.removeItem('score');
-        ">Reset</button>
+    <p class="para-js-elem"></p>
+
+
+    <p>Amazon Shipping Calculator</p>
+
+    <p>Orders under $40 = +$10 shipping</p>
+
+    <p>Orders over $40 = Free shipping</p>
+
+    <input class="inputElem" type="text" placeholder="Cost of order" onkeydown="enterkey()">
+
+    <button onclick="CalculateTotal();">Calculate</button>
+
+    <p class="js-cost"></p>
+    
     
     <script>
 
-        const score =  JSON.parse(localStorage.getItem('score'))
-        || 
-        {
-            wins : 0,
-            losses : 0
-        };
-       
-       function pickToss(guess){
-            const randomNumber = Math.random();
-            const computerMove = randomNumber < 0.5 ? 'heads' : 'tails';
-            const result = guess === computerMove ? 'You win !' : 'You lose !';
+        function enterkey(){
+            if(event.key === 'Enter'){
+                CalculateTotal();
+            }
+        }
 
-            let scoreboard = result === 'You win !' ? score.wins += 1 : score.losses +=1;
+        function CalculateTotal(){
+            const inputElem = document.querySelector('.inputElem');
+            console.log(inputElem.value);
 
-            localStorage.setItem('score',JSON.stringify(score));
+            let cost = Number(inputElem.value);
+
+            if(cost <= 40){
+                cost = cost + 10;
+                document.querySelector('.js-cost').innerHTML = `10 percent tax is added ${cost}`;
+            }
+            else {
+                document.querySelector('.js-cost').innerHTML = `Free shipping ${cost}`;
+            }
+        }
+
     
-            alert(`Computer picked ${computerMove} . Your guess is ${guess} . Result is ${result}
-            Wins : ${score.wins} , Losses : ${score.losses}`);
-       }
-        
+
+       
+
+        function youtubeBtn(){
+            let btnElem = document.querySelector('.subscribe-btn');
+            console.log(btnElem.innerHTML);
+
+            if(btnElem.innerText === 'subscribe'){
+                btnElem.innerText = 'Subscribed'
+                document.querySelector('.para-js-elem').innerHTML = `the btn is changed from subscribe to ${btnElem.innerText}`;
+            }
+            else{
+                btnElem.innerText = 'subscribe';
+                document.querySelector('.para-js-elem').innerHTML = `the btn is changed from subscribed to ${btnElem.innerText}`;
+            }
+
+
+        }        
 
     </script>
 </body>

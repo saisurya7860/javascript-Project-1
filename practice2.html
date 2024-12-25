@@ -28,8 +28,36 @@
 
     <p class="js-cost"></p>
     
+
+
+
+
+    <button class="a" onclick="choice();">9a</button>
+
+    <p class="choice"></p>
+
+    <input type="text" class="text-box" onkeydown="typekeys();">
+
+    <button class="submit-js" onclick="namesubmit();">Submit</button>
+
+    <p class="name-para"></p>
     
     <script>
+
+        function typekeys(){
+            if(event.key === 'Enter'){
+                namesubmit();
+            }
+        }
+
+       function namesubmit(){
+            const name = document.querySelector('.text-box').value;
+            console.log(name);
+            document.querySelector('.name-para').innerHTML = `Your name is ${name}`;
+       }
+
+
+
 
         function enterkey(){
             if(event.key === 'Enter'){

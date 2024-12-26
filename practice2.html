@@ -4,23 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        .subscribe-btn{
+            padding:12px 18px;
+            background: #000;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 30px;
+            border:none;
+            cursor:pointer;
+        }
+
+        .is-subscribe{
+            color: #000;
+            background:rgb(191, 184, 184);
+        }
+    </style>
 </head>
 <body>
 
     <p>youtube Subscribe button</p>
 
-    <button class="subscribe-btn" onclick="
+    <button class="subscribe-btn subscribe-btn" onclick="
         youtubeBtn();
     ">subscribe</button>
 
     <p class="para-js-elem"></p>
-
-
-    <p>Amazon Shipping Calculator</p>
-
-    <p>Orders under $40 = +$10 shipping</p>
-
-    <p>Orders over $40 = Free shipping</p>
 
     <input class="inputElem" type="text" placeholder="Cost of order" onkeydown="enterkey()">
 
@@ -32,32 +42,8 @@
 
 
 
-    <button class="a" onclick="choice();">9a</button>
-
-    <p class="choice"></p>
-
-    <input type="text" class="text-box" onkeydown="typekeys();">
-
-    <button class="submit-js" onclick="namesubmit();">Submit</button>
-
-    <p class="name-para"></p>
     
     <script>
-
-        function typekeys(){
-            if(event.key === 'Enter'){
-                namesubmit();
-            }
-        }
-
-       function namesubmit(){
-            const name = document.querySelector('.text-box').value;
-            console.log(name);
-            document.querySelector('.name-para').innerHTML = `Your name is ${name}`;
-       }
-
-
-
 
         function enterkey(){
             if(event.key === 'Enter'){
@@ -91,10 +77,13 @@
             if(btnElem.innerText === 'subscribe'){
                 btnElem.innerText = 'Subscribed'
                 document.querySelector('.para-js-elem').innerHTML = `the btn is changed from subscribe to ${btnElem.innerText}`;
+                btnElem.classList.add('is-subscribe');
             }
             else{
                 btnElem.innerText = 'subscribe';
                 document.querySelector('.para-js-elem').innerHTML = `the btn is changed from subscribed to ${btnElem.innerText}`;
+                btnElem.classList.remove('is-subscribe');
+                
             }
 
 

@@ -4,28 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            color: #fff;
+            background: #000;
+        }
+        .title{
+            font-size: 40px;
+        }
+        .move-btn{
+            height: 120px;
+            width: 120px;
+            background-color:transparent;
+            border: 3px rgb(255, 255, 255) solid;
+            border-radius: 50%;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .move-img{
+            width: 60px; 
+        }
+        .result-para{
+            font-size: 30px;
+        }
+        .move-para{
+            font-size: 20px;
+        }
+        .score-para{
+            font-size: 20px;
+        }
+        .reset-btn{
+            padding:10px 25px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            color: #000;
+            cursor: pointer;
+            background:rgb(250, 192, 54);   
+        }
+    </style>
+
 </head>
 <body>
 
-    <p>Rock Paper Scissors</p>
+    <p class="title">Rock Paper Scissors</p>
     
     <button onclick="
         playGame('Rock');    
-    ">Rock</button>
+    " class="move-btn">
+    <img src="images/rock.png"  class = "move-img" alt="">
+    </button>
 
     <button onclick="
         playGame('Paper');    
-    ">Paper</button>
+    " class="move-btn">
+    <img src="images/paper.png"  class = "move-img" alt="">
+    </button>
     
     <button onclick="
         playGame('Scissors');    
-    ">Scissors</button>
+    " class="move-btn"> 
+        <img src="images/scissors.png" class = "move-img"  alt="">
+    </button>
 
-    <p class="result-js"></p>
+    <p class="result-js result-para"></p>
 
-    <p class="move-js"></p>
+    <p class="move-js move-para"></p>
 
-    <p class="score-js"></p>
+    <p class="score-js score-para"></p>
 
     <button onclick="
         score.wins = 0;
@@ -33,7 +82,7 @@
         score.ties = 0;
         localStorage.removeItem('score');
         updateScoreElement();
-    ">Reset</button>
+    " class="reset-btn">Reset</button>
 
         <script>
 
@@ -112,9 +161,9 @@
 
                 updateScoreElement();
 
-                document.querySelector('.result-js').innerHTML = `${result}`;
+                document.querySelector('.result-js').innerHTML = `${result}.`;
 
-                document.querySelector('.move-js').innerHTML = `You ${playerMove} - ${computerMove} Computer`;
+                document.querySelector('.move-js').innerHTML = `You <img src="images/${playerMove}.png"  class = "move-img" alt=""> <img src="images/${computerMove}.png"  class = "move-img" alt=""> Computer`;
 
                 // alert(`Computer picked ${computerMove} . You picked ${playerMove} . Result is ${result}
                 // Wins : ${score.wins} ,Losses : ${score.losses} ,Ties : ${score.ties}`);

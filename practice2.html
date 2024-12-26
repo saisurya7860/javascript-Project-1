@@ -6,88 +6,38 @@
     <title>Document</title>
 
     <style>
-        .subscribe-btn{
-            padding:12px 18px;
-            background: #000;
-            color: #fff;
-            font-weight: bold;
-            border-radius: 30px;
-            border:none;
-            cursor:pointer;
-        }
+       .is-toggled{
+        padding: 10px 15px;
+        cursor: pointer;
+       }
+       .btn-on{
+        color: #fff;
+        padding: 10px 15px;
+        background: #000; 
+        cursor: pointer;
 
-        .is-subscribe{
-            color: #000;
-            background:rgb(191, 184, 184);
-        }
+       }
     </style>
 </head>
 <body>
 
-    <p>youtube Subscribe button</p>
-
-    <button class="subscribe-btn subscribe-btn" onclick="
-        youtubeBtn();
-    ">subscribe</button>
-
-    <p class="para-js-elem"></p>
-
-    <input class="inputElem" type="text" placeholder="Cost of order" onkeydown="enterkey()">
-
-    <button onclick="CalculateTotal();">Calculate</button>
-
-    <p class="js-cost"></p>
-    
-
-
-
-
+    <button class="js-button is-toggled  js-btn1" onclick="gamingbtn('.js-btn1');">Tech</button>
+    <button class="js-button is-toggled  js-btn2" onclick="gamingbtn('.js-btn2');">Music</button>
+    <button class="js-button is-toggled  js-btn3" onclick="gamingbtn('.js-btn3');">Gaming</button>
     
     <script>
-
-        function enterkey(){
-            if(event.key === 'Enter'){
-                CalculateTotal();
-            }
-        }
-
-        function CalculateTotal(){
-            const inputElem = document.querySelector('.inputElem');
-            console.log(inputElem.value);
-
-            let cost = Number(inputElem.value);
-
-            if(cost <= 40){
-                cost = cost + 10;
-                document.querySelector('.js-cost').innerHTML = `10 percent tax is added ${cost}`;
+    
+        function gamingbtn(selector){
+            let checkbtn = document.querySelector(selector);
+            if(checkbtn.classList.contains('is-toggled')){
+                checkbtn.classList.remove('is-toggled');
+                checkbtn.classList.add('btn-on');
             }
             else {
-                document.querySelector('.js-cost').innerHTML = `Free shipping ${cost}`;
+                checkbtn.classList.remove('btn-on');
+                checkbtn.classList.add('is-toggled');
             }
         }
-
-    
-
-       
-
-        function youtubeBtn(){
-            let btnElem = document.querySelector('.subscribe-btn');
-            console.log(btnElem.innerHTML);
-
-            if(btnElem.innerText === 'subscribe'){
-                btnElem.innerText = 'Subscribed'
-                document.querySelector('.para-js-elem').innerHTML = `the btn is changed from subscribe to ${btnElem.innerText}`;
-                btnElem.classList.add('is-subscribe');
-            }
-            else{
-                btnElem.innerText = 'subscribe';
-                document.querySelector('.para-js-elem').innerHTML = `the btn is changed from subscribed to ${btnElem.innerText}`;
-                btnElem.classList.remove('is-subscribe');
-                
-            }
-
-
-        }        
 
     </script>
 </body>

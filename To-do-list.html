@@ -9,29 +9,42 @@
 
         <p>To do practice List 1</p>
 
-        <input type="text" placeholder="Todo name" class="js-input" onkeydown="enterkey();">
+        <input type="text" placeholder="Todo name" class="js-input" >
 
-        <button class="add-btn" onclick="addArr();" >Add</button>
+        <button class="add-btn" onclick="addtodo();" >Add</button>
+
+        <div class="todo-js-div"></div>
+
         
         <script>
-            const myArr = [];
+          const arr = [];
+          
 
-            function addArr(){
-                const valEle = document.querySelector('.js-input');
-                const name = valEle.value;
-             
-                myArr.push(name);
-                console.log( myArr );
-
-                valEle.value = '';
+          function rendertodolist(){
+            let todolisthtml = '';
+            for(i = 0 ; i < arr.length ; i++ ){
+                    const todo = arr[i];
+                    const html = `<p>${todo}</p>`;
+                    todolisthtml += html;
+                }
+                document.querySelector('.todo-js-div').innerHTML = todolisthtml; 
             }
 
-            function enterkey(){
-                if(event.key === 'Enter'){
-                    addArr();
-                }
-             }
-     
+          function addtodo(){
+            let inputEle = document.querySelector('.js-input');
+            const name = inputEle.value;
+            arr.push(name);
+            inputEle.value = '';
+
+           console.log(arr);
+        //    function call
+           rendertodolist();
+        }
+
+        
+         
+
+          
         </script>
     </body>
     </html>

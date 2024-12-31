@@ -4,47 +4,27 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>To Do List</title>
+        <link rel="stylesheet" href="To-do-list.css">
     </head>
     <body>
 
         <p>To do practice List 1</p>
 
-        <input type="text" placeholder="Todo name" class="js-input" >
+        <div class="todo-input">
+            <input type="text" placeholder="Todo name" class="js-input-name input-name" >
 
-        <button class="add-btn" onclick="addtodo();" >Add</button>
+            <input type="date" class="js-input-date input-date">
+    
+            <button class="add-btn" onclick="addtodo();" >Add</button>
+        </div>
 
-        <div class="todo-js-div"></div>
+       
 
-        
-        <script>
-          const arr = [];
-          
-
-          function rendertodolist(){
-            let todolisthtml = '';
-            for(i = 0 ; i < arr.length ; i++ ){
-                    const todo = arr[i];
-                    const html = `<p>${todo}</p>`;
-                    todolisthtml += html;
-                }
-                document.querySelector('.todo-js-div').innerHTML = todolisthtml; 
-            }
-
-          function addtodo(){
-            let inputEle = document.querySelector('.js-input');
-            const name = inputEle.value;
-            arr.push(name);
-            inputEle.value = '';
-
-           console.log(arr);
-        //    function call
-           rendertodolist();
-        }
+        <div class="todo-js-div todo-output"></div>
 
         
+        <script src="To-do-list.js">
          
-
-          
         </script>
     </body>
     </html>

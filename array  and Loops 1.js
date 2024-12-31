@@ -108,13 +108,15 @@ addArrays([1,2,2] , [1,1,3]);
 
 
 function countpositive(nums){
+    let j = 0;
     for(let i = 0 ; i < nums.length ; i++){
-        let j = '';
+        
         if(nums[i] > 0){
            j = j + 1; 
         } 
-        console.log(j);
-  }
+    }
+  console.log(`greater than zero numbers are ${j}`);
 }
 
-countpositive([1,-3,5]);
+countpositive([1,-3,5,9,2]);
+countpositive([-2,3,-5,7,10])

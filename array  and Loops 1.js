@@ -120,3 +120,61 @@ function countpositive(nums){
 
 countpositive([1,-3,5,9,2]);
 countpositive([-2,3,-5,7,10])
+
+
+const arrays = ['hello', 'world', 'search', 'good','search'];
+
+function wordSearch(arrays){
+    for(let i = 0 ; i < arrays.length ; i++){
+        if(arrays[i] === 'search'){
+            console.log(i ,'11p');
+            break;
+        }
+    }
+}
+
+wordSearch(arrays);
+
+// 11p
+
+function findIndex(array, word){
+    const inputarr = array;
+    const inputword = word;
+    for(let i = 0; i < inputarr.length ; i++){
+        if(inputarr[i] === inputword){
+            return i;
+        }
+    }
+    return -1;
+}
+
+findIndex(['green', 'red', 'blue', 'red'],'red');
+
+console.log(findIndex(['green', 'red', 'blue', 'red'],'red'));
+console.log(findIndex(['green', 'red', 'blue', 'red'],'yellow'));
+
+// 11 q
+
+function removeEgg(foods){
+    const result = [];
+    const egg = [];
+    foods.reverse();
+    for(let i = 0 ; i < foods.length ; i++){
+        if(foods[i] === 'egg'){
+            egg.push(foods[i]);
+            if(egg.length > 2){
+                result.push(foods[i])
+            }
+            else{
+                continue;
+            }
+        }
+        else{
+            result.push(foods[i]);
+        }
+    }
+    return result.reverse();;
+}
+console.log(removeEgg(['egg', 'apple', 'egg', 'egg','ham']));
+
+// 11 t

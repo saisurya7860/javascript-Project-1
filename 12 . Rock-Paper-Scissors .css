@@ -1,0 +1,39 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #fff;
+    background: #000;
+}
+.title{
+    font-size: 40px;
+}
+.move-btn{
+    height: 120px;
+    width: 120px;
+    background-color:transparent;
+    border: 3px rgb(255, 255, 255) solid;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 10px;
+}
+.move-img{
+    width: 60px; 
+}
+.result-para{
+    font-size: 30px;
+}
+.move-para{
+    font-size: 20px;
+}
+.score-para{
+    font-size: 20px;
+}
+.reset-btn{
+    padding:10px 25px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    /* background:rgb(250, 192, 54);    */
+}

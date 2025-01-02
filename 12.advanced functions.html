@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        function greet(){
+            console.log('hello');
+        }
+
+        greet();
+
+        // function inside objects
+
+        const obj = {
+            name : 'surya',
+            fun : function(){
+                console.log('hi');
+            }
+        };
+        obj.fun();
+
+        // funtion inside array
+
+        const arr =['hi',
+            function greeting(){
+                consol.log('hi inside array');
+            }
+        ]
+
+        console.log(arr[1]);
+
+        // anonymous function
+
+        const anonymous = function(){
+            console.log('anonymous function');
+        };
+
+        anonymous();
+
+        // call back function 
+
+        function callback(para){
+            para();
+        }
+
+        callback(function(){
+            console.log('function is stored inside an argument ,argument is acessed as the variable that stores function');
+        });
+
+        // set timeout function 
+
+        // Asynchronous execution
+
+        setTimeout(function greet(){
+            console.log('hi');
+        },3000);
+
+
+        console.log('hhhhhhh');
+
+
+        // Set Innterval function
+
+        setInterval(function(){
+            console.log('hello I am set interval');
+        },5000);
+    </script>
+</body>
+</html>

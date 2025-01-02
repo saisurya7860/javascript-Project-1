@@ -19,21 +19,20 @@ let score = JSON.parse(localStorage.getItem('score'))
 
             // variable to store autoplaying
 
-            let isAutoplaying = false;
+            let isAutoplaying = true;
             let intervalId ;
 
             function autoplay(){
-                if(!isAutoplaying){
+                if(isAutoplaying){
                     intervalId = setInterval(function(){
                         const playerMove = PickcomputerMove();
                         playGame(playerMove); 
                     },1000);
-                    
-                    isAutoplaying = true;
+                    isAutoplaying = false;
                 }
                 else{
                     clearInterval(intervalId);
-                    isAutoplaying = false;
+                    isAutoplaying = true;
                 }
                 
             }

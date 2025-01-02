@@ -7,9 +7,125 @@
 </head>
 <body>
     
+    <button onclick="change();" class="start-butt">Start</button>
+
+    <button onclick="addchange();" class="addcart-butt">Add to cart</button>
+
+    <p class="added-js-result"></p>
+
+    <button class="add-btn" onclick="
+        messages += 1;
+        displayNotification();
+    ">add</button>
+    <button class="remove" onclick="
+         if (messages > 0) {
+        messages--;
+
+        // If there are no new messages, stop displaying
+        // the notification in the tab.
+        if (messages === 0) {
+          stopNotification();
+        }
+      }"
+      >remove</button>
 
     <script>
-        function greet(){
+        // 12 a 
+        let add = function(){
+            console.log(2+3);
+        }
+        add();
+        add();
+        // 12 b
+        function runTwice(fun){
+            fun();
+            fun();
+        }
+        runTwice(function(){
+            console.log('12b');
+        });
+        runTwice(add);
+        // 12 c
+        // function change(){
+        //     setTimeout(function(){
+        //         document.querySelector('.start-butt').innerHTML = 'Finished';
+        //     },3000);
+        // }
+
+        // 12 d
+        
+        function change(){
+            document.querySelector('.start-butt').innerHTML = 'Loading';
+            setTimeout(function(){
+                document.querySelector('.start-butt').innerHTML = 'Finished';
+            },3000);
+        }
+
+        // 12 e , 12f
+
+        let timeoutId;
+
+        function addchange(){
+            const addResult = document.querySelector('.added-js-result');
+            addResult.innerHTML = "Added";
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(function(){
+                addResult.innerHTML = '';
+            },3000);
+
+        }
+
+        // 12 g
+
+        let messages = 5;
+        let intervalId;
+
+        let isdisplayNotification;
+
+        function displayNotification(){
+
+            if(isdisplayNotification){
+                return;
+            }
+
+            isdisplayNotification = true;
+
+            intervalId = setInterval(function(){
+                if(document.title === 'app'){
+                    document.title = `(${messages}) New messages`
+                }
+                else{
+                    document.title = 'app';
+                }
+              },2000);
+
+            }
+
+            function stopNotification(){
+                isdisplayNotification = false;
+
+                clearTimeout(intervalId);
+                document.title ='app';
+              }
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         /** function greet(){
             console.log('hello');
         }
 
@@ -70,6 +186,8 @@
         setInterval(function(){
             console.log('hello I am set interval');
         },5000);
+        **/
+
     </script>
 </body>
 </html>

@@ -1,0 +1,41 @@
+body{
+    font-family: Arial;
+    box-sizing:border-box;
+}
+
+.todo-input,.todo-output{
+    display: grid;
+    grid-template-columns: 13rem 10rem 8rem ;
+    align-items: center;
+    gap:1rem;
+}
+
+.todo-input{
+    margin-bottom:1rem;
+}
+
+.input-name,.input-date{
+    padding: 0.8rem;
+}
+
+.input-name::placeholder{
+    font-size: 1.1rem;
+}
+
+.add-btn{
+    border: none;
+    padding: 0.8rem;
+    color:#fff;
+    background-color: rgb(18, 152, 18);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.del-btn{
+    border: none;
+    padding: 0.8rem;
+    color:#fff;
+    background-color: rgb(178, 46, 6);
+    cursor: pointer;
+    font-size: 1rem;
+}

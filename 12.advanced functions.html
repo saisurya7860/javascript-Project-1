@@ -108,16 +108,60 @@
                 document.title ='app';
               }
 
+            //   12 g
+
+            // practice
+
+            console.log([1,2,3].map((value,index) => {
+                return index;
+            }));
        
+            // 12 j and 12k
 
+            const multiply = () =>{ return 3 * 5};
 
+            console.log(multiply());
 
+            // 12 l
 
+            function countPositive(nums){
+                let positivenum = 0;
+                nums.forEach((num) => {
+                    if(num > 0){
+                        positivenum ++
+                    }
+                });
+                return positivenum;
+            }
 
+            countPositive([1,2,3]);
+            console.log(countPositive([1,2,-3,4,-5,0,0]));
 
+            // 12 m
+            function addNum(array,num){
+                
+                return  array.map(value => value + num);
+            }
 
+            console.log(addNum([1,2,3],2));
 
+            function removeEgg(foods){
+                
+                let eggsRemoved =  0;
 
+                return foods.filter((food) => {
+                    if(food === 'egg' && eggsRemoved <2){
+                        eggsRemoved++;
+                        return false;
+                    }
+                    else {
+                        return true;
+                    }
+                } ) ;          
+
+            }
+
+            console.log(removeEgg(['apple', 'egg', 'egg', 'ham'])); 
 
 
 

@@ -7,7 +7,7 @@ function rendertodolist(){
   let todolisthtml = '';
   
   // forEach function innerfn has to para i.e. 1. array values 2. index of array values
-  todoArr.forEach(function(todoObject,index){
+  todoArr.forEach((todoObject,index) => { //arrow function
   
       const{name,dueDate} = todoObject;
       const html = ` 

@@ -37,6 +37,7 @@ let score = JSON.parse(localStorage.getItem('score'))
         
     }
 
+    // add event listener for rock move
     document.querySelector('.js-rock-button').
     addEventListener('click', () => {
         playGame('Rock');
@@ -52,7 +53,19 @@ let score = JSON.parse(localStorage.getItem('score'))
         playGame('Scissors');
     });
 
+    document.body.addEventListener('keydown', (event) => {
+        if(event.key === 'r'){
+            playGame('Rock');
+        }
+        else if(event.key === 'p'){
+            playGame('Paper');
+        }
+        else if(event.key === 's'){
+            playGame('Scissors');
+        }
+    });
 
+    // add event listener for reset and autoplay    
     document.querySelector('.js-reset-button').
     addEventListener('click' , () => {
         score.wins = 0;
@@ -65,7 +78,7 @@ let score = JSON.parse(localStorage.getItem('score'))
     document.querySelector('.js-autoplay-button').
     addEventListener('click', () => {
         autoplay();
-    })
+    });
 
     function playGame(playerMove){
         const computerMove = PickcomputerMove();

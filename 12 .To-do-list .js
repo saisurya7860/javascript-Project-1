@@ -13,16 +13,30 @@ function rendertodolist(){
       const html = ` 
       <div>${name} </div>
       <div>${dueDate}</div>
-        <button class="del-btn" onclick = "
-          todoArr.splice(${index},1);
-          rendertodolist();"
+        <button class="del-btn js-delete-btn"
         >Delete</button>  
       `;
       todolisthtml += html;
   });
 
-    document.querySelector('.todo-js-div').innerHTML = todolisthtml; 
+    document.querySelector('.todo-js-div').innerHTML = todolisthtml;
+    
+    // html element is created after the todolistHtml 
+    // queryselectorall is used bcos it only selects the first elem when normal queryselector is used
+    document.querySelectorAll('.js-delete-btn').
+    forEach((deleteButtons, index) => {
+      deleteButtons.addEventListener('click' ,() =>{
+        todoArr.splice(index,1);
+          rendertodolist();
+      })
+    });
   }
+
+
+  document.querySelector('.add-js-btn').
+  addEventListener('click' , () => {
+    addtodo();
+  });
 
 function addtodo(){
   let nameInput = document.querySelector('.js-input-name');
